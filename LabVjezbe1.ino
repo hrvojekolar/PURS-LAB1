@@ -22,7 +22,11 @@ void loop(){
 			digitalWrite(LED_CRVENA, HIGH);
 		}else if(slovo == 'z'){
 			digitalWrite(LED_ZELENA, HIGH);
-		}else if(slovo == 'o'){
+		}else if(slovo == 'p'){
+			digitalWrite(LED_CRVENA, HIGH);
+			digitalWrite(LED_ZELENA, HIGH);
+		}
+		else if(slovo == 'o'){
 			digitalWrite(LED_CRVENA, LOW);
 			digitalWrite(LED_ZELENA, LOW);
 		}
