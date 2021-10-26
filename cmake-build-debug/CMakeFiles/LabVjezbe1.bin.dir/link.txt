@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/LabVjezbe1.bin.dir/LabVjezbe1.ino.o -o ../build/LabVjezbe1.bin.exe -Wl,--out-implib,libLabVjezbe1.bin.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
