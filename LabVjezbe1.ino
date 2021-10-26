@@ -1,20 +1,23 @@
 #include <Arduino.h>
 
-//#define LED_PIN 22
-#define LED_PIN 21
+#define LED_CRVENA 22
+#define LED_ZELENA 21
+#define SKLOPKA 32
 
-void setup(){
-	pinMode(LED_PIN, OUTPUT);
-	digitalWrite(LED_PIN, LOW);
-
+void setup() {
+	pinMode(LED_CRVENA, OUTPUT);
+	pinMode(LED_ZELENA, OUTPUT);
+	pinMode(SKLOPKA, INPUT);
+	digitalWrite(LED_CRVENA, LOW);
+	digitalWrite(LED_ZELENA, LOW);
 }
-
-void loop(){
-	digitalWrite(LED_PIN, HIGH);
-	//delay(500);
-	delay(1000);
-	digitalWrite(LED_PIN, LOW);
-	//delay(500);
-	delay(1000);
+void loop() {
+	if(digitalRead(SKLOPKA)){
+		digitalWrite(LED_CRVENA, HIGH);
+		digitalWrite(LED_ZELENA, LOW);
+	}else{
+		digitalWrite(LED_CRVENA, LOW);
+		digitalWrite(LED_ZELENA, HIGH);
+	}
 }
 
