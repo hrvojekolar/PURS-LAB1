@@ -1,20 +1,32 @@
 #include <Arduino.h>
 
-//#define LED_PIN 22
-#define LED_PIN 21
+#define LED_CRVENA 22
+#define LED_ZELENA 21
+
+char slovo;
 
 void setup(){
-	pinMode(LED_PIN, OUTPUT);
-	digitalWrite(LED_PIN, LOW);
+	Serial.begin(9600);
+	pinMode(LED_CRVENA, OUTPUT);
+	pinMode(LED_ZELENA, OUTPUT);
 
+	digitalWrite(LED_CRVENA, LOW);
+	digitalWrite(LED_ZELENA, LOW);
 }
 
 void loop(){
-	digitalWrite(LED_PIN, HIGH);
-	//delay(500);
-	delay(1000);
-	digitalWrite(LED_PIN, LOW);
-	//delay(500);
-	delay(1000);
+	if (Serial.available() > 0) {
+		slovo = Serial.read();
+		Serial.println(slovo);
+		if(slovo == 'c'){
+			digitalWrite(LED_CRVENA, HIGH);
+		}else if(slovo == 'z'){
+			digitalWrite(LED_ZELENA, HIGH);
+		}else if(slovo == 'o'){
+			digitalWrite(LED_CRVENA, LOW);
+			digitalWrite(LED_ZELENA, LOW);
+		}
+	}
 }
+
 
